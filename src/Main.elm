@@ -162,8 +162,7 @@ view : Model -> Html Msg
 view model =
     div
         [ class "todomvc-wrapper" ]
-        [ h1 [] [ text "TODO MVC APP" ]
-        , section
+        [ section
             [ class "todoapp" ]
             [ viewInput model.field
             , viewEntries model.visibility model.entries
