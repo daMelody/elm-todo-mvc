@@ -5,3 +5,7 @@ repl-temp-*
 
 #vs-code
 .vscode/
+
+# compiled
+index.html
+index.js
