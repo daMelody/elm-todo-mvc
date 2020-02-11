@@ -1,5 +1,7 @@
 module Main exposing (main)
 
+import Bootstrap.CDN as CDN
+import Bootstrap.Grid as Grid
 import Browser
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -160,15 +162,18 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    div
-        [ class "todomvc-wrapper" ]
-        [ section
-            [ class "todoapp" ]
-            [ viewInput model.field
-            , viewEntries model.visibility model.entries
-            , viewControls model.visibility model.entries
+    Grid.container []
+        [ CDN.stylesheet
+        , div
+            [ class "todomvc-wrapper" ]
+            [ section
+                [ class "todoapp" ]
+                [ viewInput model.field
+                , viewEntries model.visibility model.entries
+                , viewControls model.visibility model.entries
+                ]
+            , infoFooter
             ]
-        , infoFooter
         ]
 
 
